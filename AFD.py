@@ -3,6 +3,7 @@ from tokenize import String
 
 class AFD:
     def __init__(self):
+        self.current_state = String
         self.states = []
         self.alphabet = []
         self.initial_state = String
@@ -61,6 +62,13 @@ class AFD:
                 input("Não é um estado valido, os estados de finais tem que estar contido nos estados do automato.")
             print(self.end_states)
 
+    def computing(self):
+        w = input("Escreva a palavra: ")
+        for string in w:
+            if (string not in self.alphabet):
+                print("Simbolo não pertece ao alfabeto")
+                self.computing()
+            
 
 afd = AFD()
 
